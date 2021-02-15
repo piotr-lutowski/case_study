@@ -1,0 +1,24 @@
+
+/**
+ * The implementation is responsible for resolving the id of the collection from the
+ * given collection name.
+ *
+ * Second responsibility is to sort the returning result from the item service in whatever way.
+ *
+ * Please write in the case study's summary if you find this approach correct or not. In both cases explain why.
+ *
+ */
+
+
+To zależy od sposobu implementacji. Jeżeli dwie osobne funkcjonalności/odpowiedzialności mają zostać zaimplementowane
+w obrębie jednej klasy to oczywiście łamiemy zasadę jednej odpowiedzialności (SRP - single responsibility principle).
+Natomiast jeżeli poszczególne zależności bądź jedna z nich zostaną dostarczone (np. dependency injection),
+wówczas jedna z odpowiedzialności zostaje wyodrębniona z zakresu danej klasy / metody.
+Ja zastosowałem fabrykę abstrakcyjną + dependency injection dzięki czemu zachowałem zgodność z zasadą SRP.
+
+
+
+Odnośnie metody src/Lpp/Service/BrandServiceInterface.php:32
+W testach zastosowałem Fixtures wobec czego ta metoda nie była mi potrzebna.
+Natomiast nie usuwałem jej ponieważ nie miałem pewności czy nie jest ona Państwu technicznie potrzebna do
+weryfikacji zadania przy użyciu gotowego zestawu testowego.
